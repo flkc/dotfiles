@@ -1,0 +1,11 @@
+" Load common basic keymaps
+source .vimrc.keymap
+
+" IdeaVim specific settings are here
+
+set splitbelow
+set splitright
+set incsearch
+set ignorecase
+set smartcase
+set surround
