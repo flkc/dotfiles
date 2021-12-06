@@ -1,17 +1,17 @@
-call plug#begin('~/.vim/plugged')
+set number
 
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-Plug 'junegunn/fzf'
+call plug#begin(stdpath('data') . '/plugged')
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-surround'
+Plug 'junegunn/seoul256.vim'
 Plug 'robertmeta/nofrils'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-:tnoremap <Esc> <C-\><C-n>
+let g:seoul256_background = 236
+colo seoul256
