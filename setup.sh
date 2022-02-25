@@ -11,4 +11,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 echo $'Initialize symlinks of all files but .git, and setup.sh should to HOMEDIR\n'
 
-find ./ -maxdepth 1 -printf "%f\n" | egrep -v './|.git|setup.sh' |  awk '{print "\"cp -rs $PWD/"$1" $HOME/"$1"\""}' | xargs -i sh -c "{}"
+# TODO: find a way to create missing directories recursevly
+
+find . -type f | cut -c 3- | egrep -v '.git|setup.sh' | awk '{print "\"cp -rs $PWD/"$1" $HOME/"$1"\""}' | xargs -i sh -c "{}"
